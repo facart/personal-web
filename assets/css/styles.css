@@ -29,6 +29,9 @@
 
   --shadow-sm: 0 1px 2px rgba(26, 43, 60, 0.04);
   --shadow-md: 0 4px 12px rgba(26, 43, 60, 0.08);
+
+  --site-header-h: 4.5rem;
+  --site-footer-h: 4.25rem;
 }
 
 * {
@@ -36,12 +39,16 @@
 }
 
 html {
+  height: 100%;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.65;
@@ -49,6 +56,16 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  position: fixed;
+  top: var(--site-header-h);
+  bottom: var(--site-footer-h);
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 /* =========================================================
@@ -112,11 +129,12 @@ strong { font-weight: 600; }
    ========================================================= */
 
 .site-header {
-  background: var(--color-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   border-bottom: 1px solid var(--color-border);
   padding: 1.25rem 2rem;
-  position: sticky;
-  top: 0;
   z-index: 100;
   backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.92);
@@ -190,7 +208,7 @@ strong { font-weight: 600; }
   border-radius: var(--radius-lg);
   padding: 1.75rem;
   position: sticky;
-  top: 6rem;
+  top: 0;
   align-self: start;
 }
 
@@ -527,13 +545,17 @@ strong { font-weight: 600; }
    ========================================================= */
 
 .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
   padding: 1.5rem 2rem;
   text-align: center;
   color: var(--color-text-soft);
   font-size: 0.9rem;
-  margin-top: 4rem;
 }
 
 /* =========================================================
@@ -541,6 +563,10 @@ strong { font-weight: 600; }
    ========================================================= */
 
 @media (max-width: 900px) {
+  :root {
+    --site-header-h: 6.5rem;
+  }
+
   .page {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -571,6 +597,10 @@ strong { font-weight: 600; }
 }
 
 @media (max-width: 480px) {
+  :root {
+    --site-header-h: 7rem;
+  }
+
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.35rem; }
   .site-header { padding: 1rem; }

@@ -462,13 +462,20 @@ strong { font-weight: 600; }
   color: white;
 }
 
-.btn-disabled {
-  background: var(--color-surface);
-  color: var(--color-text-soft);
-  border-color: var(--color-border);
+.btn.btn-disabled {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
   cursor: not-allowed;
-  opacity: 0.65;
+  opacity: 0.72;
   pointer-events: none;
+  user-select: none;
+}
+
+.btn.btn-disabled:hover {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
 }
 
 /* Recent Updates list */

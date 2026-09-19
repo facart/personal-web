@@ -14,7 +14,6 @@
     <div class="header-inner">
       <a href="index.html" class="site-title">Facundo Cabral</a>
       <nav class="site-nav">
-        <a href="index.html" class="active">Home</a>
         <a href="teaching.html">Teaching</a>
         <a href="research.html">Research</a>
         <!--<a href="software.html">Software</a>-->
@@ -64,46 +63,34 @@
     <!-- ========== Content ========== -->
     <section class="content">
       <p>
-        I am an Economics undergraduate (concentration in Financial Analysis) at the Universidad Nacional Mayor de San Marcos (UNMSM), where I also serve as a Teaching Assistant for Econometrics at the Faculty of Economic Sciences (FCE). Driven by learning agility and continuous improvement, I bridge the gap between economic theory and technical implementation.
-      </p>
-      <p>
-        My expertise lies in Advanced Analytics, Data Engineering, and Artificial Intelligence, with a proven track record across both the public and private financial sectors. I specialize in transforming complex data streams into actionable business intelligence, building automated ETL pipelines, and delivering data-driven solutions that drive operational efficiency.
-      </p>
-      <p>
-        Prospective M.S. in <strong>Data Science</strong> candidate.
+        Economista en formación con experiencia sólida en analítica avanzada. Especialista en transformación de flujos de datos complejos en insights y soluciones de negocio. Dominio de herramientas del ecosistema analítico e Inteligencia Artificial con enfoque en economía y finanzas. Apasionado por la docencia. Candidato al Máster en Ciencia de Datos.
       </p>
 
-      <div class="section-label">Honors &amp; Awards</div>
+      <div class="section-label">Honores &amp; Distinciones</div>
 
       <ul class="achievements-list">
         <li>
-          <strong>1st Place Winner - Datathon Sunass 2026 (2nd Edition)</strong>
+          <strong>1er Puesto - Datathon Sunass 2026 (2da Edición)</strong>
           <a href="https://www.gob.pe/institucion/sunass/noticias/1386141-datathon-sunass-talento-universitario-crea-soluciones-inteligentes-para-mejorar-el-servicio-de-agua-potable" 
              target="new" 
              rel="noopener" 
              style="text-decoration: none; color: #154a8f; margin-left: 4px;">
-             <em>(Press Release)</em>
+             <em>(Nota de Prensa)</em>
           </a>
           <br>
-          Commercial Category, Costa Centro Macro-region. Developed an analytical solution to detect calculation errors in billed volume and amounts collected to improve the commercial and financial management of water service companies (EPS) in Peru.
-        </li>
-
-        <br>
-        <li>
-          <strong>Top 4 Finalist - Hackathon Rimac 2025</strong><br>
-          Healthcare &amp; Data Challenge.
+          Categoría Comercial, Región Centro Costa. Desarrollé un proceso EDA para detectar errores en el volumen y los montos facturados para mejorar la gestión comercial y financiera de las empresas de servicios de agua (EPS) en Perú.
         </li>
 
         <br>
         <li>
           <strong>Techy Winter Lab – Cohort I (Ranked 5th)</strong><br>
-          Selected as one of 17 scholarship recipients (&lt;15% acceptance rate). Intensive Data Science bootcamp covering Python fundamentals through advanced Machine Learning.
+          Seleccionado como uno de los 17 becarios (&lt;15% tasa de aceptación). Bootcamp intensivo de Data Science donde recibí formación en Python desde fundamentos de programación hasta Machine Learning avanzado.
         </li>
       </ul>  
       
 
 
-      <div class="section-label">Affiliations &amp; Collaborations</div>
+      <div class="section-label">Afiliaciones &amp;  Colaboraciones</div>
       <div class="affiliations">
         <a  href="https://www.unmsm.edu.pe/" target="_blank" rel="noopener noreferrer">
           <img src="assets/images/unmsm.svg" class="affiliation-logo" alt="Universidad Pregrado">
@@ -126,6 +113,23 @@
   <footer class="site-footer">
     &copy; 2026 Facundo Cabral
   </footer>
+
+  <script>
+    // Localhost only: drop leftover PWAs (e.g. Emapica) that hijack Live Server on :5500.
+    (async function clearHijackingServiceWorkers() {
+      if (!/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) return;
+      try {
+        if ('serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map(function (r) { return r.unregister(); }));
+        }
+        if ('caches' in window) {
+          const keys = await caches.keys();
+          await Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        }
+      } catch (e) {}
+    })();
+  </script>
 
 </body>
 </html>

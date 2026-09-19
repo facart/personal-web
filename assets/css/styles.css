@@ -429,6 +429,19 @@ strong { font-weight: 600; }
   margin-top: 0.75rem;
 }
 
+.latex-session {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.latex-session-label {
+  min-width: 5.5rem;
+  font-weight: 500;
+}
+
 .btn {
   display: inline-block;
   padding: 0.4rem 0.9rem;

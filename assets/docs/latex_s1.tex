@@ -1,0 +1,178 @@
+% =====================================================
+% PREÁMBULO
+%=======================================================
+
+% DEFINIR EL TIPO DE DOCUMENTO {}
+% DEFINIR EL TAMAÑO DE LETRA []
+% DEFINIR LAS DIMENSIONES []: letterpaper | a4paper
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+
+% Lenguaje
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Margenes
+\usepackage{geometry}
+\geometry{
+    top=3cm,
+    bottom=3cm,
+    left=2.5cm,
+    right=2.5cm
+}
+
+% Texto Justificado
+\usepackage{ragged2e}
+\justifying
+
+% Interlineado
+\usepackage{setspace}
+\setstretch{1.5}
+
+% Sangría
+\setlength{\parindent}{1.5cm}
+
+% Metadatos del documento
+\title{Taller de Latex - Sesión 1}
+\author{Facundo Cabral}
+\date{Septiembre de 2026}
+
+% Paquetes Adicionales
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{xcolor}
+
+\usepackage{enumitem}
+
+% Funciones Creadas
+\newcommand{\azul}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\der}[2]{\frac{\partial #1}{\partial #2}}
+
+% =====================================================
+% DOCUMENTO
+%=======================================================
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%=======================================================
+\section{Tipos de Letras}
+%=======================================================
+
+Este es un texto normal.
+
+\textbf{Este es un texto en negrita.}
+
+\textit{Este es un texto en itálica.}
+
+\textsl{Este texto está inclinado.}
+
+\textsc{Este texto está en versalitas.}
+
+\textcolor{blue}{Este texto está en azul.}
+
+\azul{Este texto está en azul con función creada}
+
+%=======================================================
+\section{Listas y Enumeraciones}
+%=======================================================
+
+% Sin sangría este párrafo
+\noindent A continuación, se muestra la lista de pendientes:
+
+\begin{itemize}[leftmargin=*, nosep]
+    \item Pendiente 1
+    \item[$\bullet$] Pendiente 2
+    \item[$\circ$] Pendiente 3
+\end{itemize}
+
+\vspace*{0.5cm}
+
+A continuación, lista enumerada:
+
+\begin{enumerate}
+    \item Pendiente 1
+    \item Pendiente 2
+\end{enumerate}
+
+\newpage
+
+\section{Matemática}
+
+Un consumidor racional elige la cesta de bienes que maximiza su utilidad sujeto a la restriccion presupuestaria. Consideramos un ingreso $I>0$ que se enfrenta a un vector de precios $(p_x,p_y) \in \mathbb{R}^2_{++}$ para los bienes $x$ e $y$.
+
+\vspace{0.5cm}
+
+La propiedad de transitividad de las preferencias $$u(x) \geq u(y) \iff x \succsim y$$
+
+$$u(x,y)=A\cdot x^\alpha \cdot y^{1-\alpha} \hspace{1cm} \forall A>0, \alpha \in (0,1)$$
+
+\vspace{-1cm}
+
+\begin{align*}
+    \max_{x,y} \hspace{0.25cm} & u(x,y) \\
+    & \text{s.a. } \hspace{0.25cm} p_xx+p_yy = I
+\end{align*}
+
+\vspace{-1cm}
+
+\begin{align*}
+    a & = \beta\cdot 5 \\
+    a/\beta & = 5
+\end{align*}
+
+
+$$u(x,y)= x^\alpha \cdot y^{1-\alpha}$$
+
+\vspace{-1cm}
+
+\begin{align*}
+    \mathcal{L}(x,y,\lambda) & = x^\alpha \cdot y^{1-\alpha} + \lambda(I-p_xx-p_yy)\\
+    \der{\mathcal{L}}{x} & = \alpha x^{\alpha-1}y^{1-\alpha} - \lambda p_x =0\\
+    \der{\mathcal{L}}{y} & = (1-\alpha) x^{\alpha}y^{-\alpha} - \lambda p_y=0 \\
+    \der{\mathcal{L}}{\lambda } & = I-p_xx-p_yy=0 \\
+\end{align*}
+
+\begin{equation}
+    \boxed{
+        x^*(p_x,p_y,I)=\frac{\alpha I}{p_x} \hspace{1.5cm}y^*(p_x,p_y,I)=\frac{(1-\alpha)I}{p_y}
+    }
+\end{equation}
+
+\[
+    \begin{bmatrix}
+        0   & p_x   & p_y \\
+        p_x & U_{xx}    & U_{xy} \\
+        p_y & U_{yx}    & U_{yy}
+    \end{bmatrix}_{3\times3}
+    \begin{bmatrix}
+        \partial \lambda \\
+         \partial x \\
+         \partial y
+    \end{bmatrix}_{3\times 1} =
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        0
+    \end{bmatrix}
+\]
+
+$$\sum_{t=0}^{T}\beta^t \cdot U(c_t)$$
+
+$$\int_{0}^{\infty}e^{-rt}\pi_tdt$$
+
+$$\lim_{n \to \infty} \left\{1+\frac{1}{n}\right\}^n=e$$
+
+
+\end{document}
